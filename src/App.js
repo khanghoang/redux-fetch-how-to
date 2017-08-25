@@ -1,19 +1,28 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import logo from './logo.svg';
 import './App.css';
 
-const fetchUserAction = () => ({ dispatch }) => {
-  dispatch({ type: 'FETCH_START' });
-  fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => {
-      return res.json();
-    })
-    .then(users => {
-      dispatch({ type: 'FETCH_END', payload: users });
-    });
-};
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
 
+import fetchFactory from './fetchFactory';
+import logo from './logo.svg';
+
+// const fetchUserAction = () => ({ dispatch }) => {
+//   dispatch({ type: 'FETCH_START' });
+//   fetch('https:/jsonplaceholder.typicode.com/users')
+//     .then(res => {
+//       return res.json();
+//     })
+//     .then(users => {
+//       dispatch({ type: 'FETCH_END', payload: users });
+//     });
+// };
+//
+// const usersSelector = state => state.users.users || [];
+
+const {
+  actionCreator: fetchUserAction2,
+  selector: usersSelector2,
+} = fetchFactory('users', 'https://jsonplaceholder.typicode.com/users');
 
 const Username = ({ username }) => {
   return (
@@ -47,10 +56,12 @@ class App extends Component {
 }
 
 export default connect(
-  state => ({
-    users: state.users || [],
-  }),
+  state => {
+    return {
+      users: usersSelector2(state) || [],
+    }
+  },
   ({
-    fetchUser: fetchUserAction,
+    fetchUser: fetchUserAction2,
   })
 )(App);

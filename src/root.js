@@ -2,6 +2,7 @@ import React from 'react';
 import App from './App';
 import { connect, Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { apiReducer } from './fetchFactory';
 
 const userReducer = (state = { users: [], isFetching: false }, action) => {
   switch (action.type) {
@@ -30,7 +31,10 @@ const thunkMiddleware = store => next => action => {
   next(action);
 };
 
-const store = createStore(userReducer, {}, applyMiddleware(thunkMiddleware));
+const store = createStore(combineReducers({
+  users: userReducer,
+  ...apiReducer,
+}), {}, applyMiddleware(thunkMiddleware));
 
 export default () => (
   <Provider store={store}><App /></Provider>

@@ -16,6 +16,8 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "enzyme-to-json": "^1.5.1",
+    "node-fetch": "^1.7.2",
     "react-test-renderer": "^15.6.1"
   }
 }

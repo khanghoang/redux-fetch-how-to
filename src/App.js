@@ -39,7 +39,9 @@ class App extends Component {
         </div>
         <div className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-          {this.state.users.map(u => <Username username={u.name} />)}
+          <div id="users">
+            {this.state.users.map(u => <Username username={u.name} />)}
+          </div>
         </div>
       </div>
     );

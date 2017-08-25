@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders list of users 1`] = `
+<div
+  id="users"
+>
+  <Username
+    username="Leanne Graham"
+  >
+    <p>
+      Leanne Graham
+    </p>
+  </Username>
+  <Username
+    username="Ervin Howell"
+  >
+    <p>
+      Ervin Howell
+    </p>
+  </Username>
+  <Username
+    username="Clementine Bauch"
+  >
+    <p>
+      Clementine Bauch
+    </p>
+  </Username>
+  <Username
+    username="Patricia Lebsack"
+  >
+    <p>
+      Patricia Lebsack
+    </p>
+  </Username>
+  <Username
+    username="Chelsey Dietrich"
+  >
+    <p>
+      Chelsey Dietrich
+    </p>
+  </Username>
+  <Username
+    username="Mrs. Dennis Schulist"
+  >
+    <p>
+      Mrs. Dennis Schulist
+    </p>
+  </Username>
+  <Username
+    username="Kurtis Weissnat"
+  >
+    <p>
+      Kurtis Weissnat
+    </p>
+  </Username>
+  <Username
+    username="Nicholas Runolfsdottir V"
+  >
+    <p>
+      Nicholas Runolfsdottir V
+    </p>
+  </Username>
+  <Username
+    username="Glenna Reichert"
+  >
+    <p>
+      Glenna Reichert
+    </p>
+  </Username>
+  <Username
+    username="Clementina DuBuque"
+  >
+    <p>
+      Clementina DuBuque
+    </p>
+  </Username>
+</div>
+`;

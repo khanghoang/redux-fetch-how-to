@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect, Provider} from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logo from './logo.svg';
 import './App.css';
@@ -10,17 +10,17 @@ const userReducer = (state = { users: [], isFetching: false }, action) => {
       return {
         isFetching: true,
         users: [],
-      }
+      };
     case 'FETCH_END':
       return {
         isFetching: true,
         users: action.payload,
-      }
+      };
     default: {
       return state;
     }
   }
-}
+};
 
 const thunkMiddleware = store => next => action => {
   if (typeof action === 'function') {
@@ -38,9 +38,9 @@ const fetchUserAction = ({ dispatch }) => {
       return res.json();
     })
     .then(users => {
-      dispatch({ type: 'FETCH_END', users, });
+      dispatch({ type: 'FETCH_END', users });
     });
-}
+};
 
 const store = createStore(() => ({}), {}, applyMiddleware([thunkMiddleware]));
 
@@ -60,8 +60,7 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   render() {
     return (
@@ -73,6 +72,8 @@ class App extends Component {
           </div>
           <div className="App-intro">
             To get started, edit <code>src/App.js</code> and save to reload.
+          </div>
+          <div id="users">
             {this.state.users.map(u => <Username username={u.name} />)}
           </div>
         </div>

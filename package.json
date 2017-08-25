@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "enzyme": "^2.9.1",
+    "nock": "^9.0.14",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -14,5 +16,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme-to-json": "^1.5.1",
+    "node-fetch": "^1.7.2",
+    "react-test-renderer": "^15.6.1"
   }
 }
